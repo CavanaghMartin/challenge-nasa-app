@@ -5,7 +5,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { useDispatch, useSelector } from 'react-redux';
-import { setRover, filterByCams } from '../redux/product/photo.action';
+import {  filterByCams } from '../redux/product/photo.action';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
@@ -35,8 +35,8 @@ export default function SelectCamera() {
       <FormControl className={classes.formControl}>
         <FormHelperText>Filter by camera</FormHelperText>
         <Select
-        
-          value={camera}
+          defaultValue={camera}
+          value={""}
           onChange={handleChange}
           className={classes.selectEmpty}
           inputProps={{ 'aria-label': 'Without label' }}

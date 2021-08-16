@@ -5,6 +5,8 @@ import {
     SET_PAGE,
     SET_PAGE_NUM,
     SET_ROVER,
+    SET_STORAGE,
+    DELETE_FAVORITE
 } from './photo.action';
 
 const initialState = {
@@ -15,7 +17,9 @@ const initialState = {
   cameras: [],
   cameraPhotos: [],
   page: [],
-  pageNum: 1
+  pageNum: 1,
+  favorites: JSON.parse( localStorage.getItem("favorite") || "[]" ),
+
 }
 const productReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -25,6 +29,17 @@ const productReducer = (state = initialState, action) => {
         ...state,
         rover: action.payload,
 
+      }
+      case DELETE_FAVORITE:
+      return {
+        ...state,
+        favorites: action.payload,
+
+      }
+      case SET_STORAGE:
+      return {
+        ...state,
+        favorites: action.payload
       }
 
     case GET_PHOTOS:

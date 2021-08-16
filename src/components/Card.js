@@ -7,19 +7,34 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { useDispatch,useSelector } from 'react-redux';
+import { setStorage, deleteFavorite } from '../redux/product/photo.action';
 
 const useStyles = makeStyles({
   root: {
     maxWidth: 345,
-    margin:10
+    margin:10,
+    display:"flex",
+    flexDirection:"column",
+    alignItems:"center"
+    
   },
 });
 
-export default function ImgMediaCard({img,earth_date,sol,cameraName,roverName}) {
+export default function ImgMediaCard({img,earth_date,sol,cameraName,roverName,favorite}) {
   const classes = useStyles();
+   const dispatch = useDispatch()
+   const favorites = useSelector(state => state.photoReducer.favorites)
+
+   function handleClick(e) {
+    dispatch(setStorage([...favorites,{img,earth_date,sol,cameraName,roverName}]))
+   }
+   function handleDelete(e) {
+    dispatch(deleteFavorite({img,earth_date,sol,cameraName,roverName}))
+   }
 
   return (
-    <Card className={classes.root}>
+    <Card data-testid={`card`} className={classes.root}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -29,24 +44,27 @@ export default function ImgMediaCard({img,earth_date,sol,cameraName,roverName}) 
         />
         <CardContent>
           <Typography gutterBottom variant="h7" component="h5">
-            {earth_date}
-          </Typography>
-          <Typography gutterBottom variant="h7" component="h5">
-            {sol}
-          </Typography>
-          <Typography gutterBottom variant="h7" component="h5">
-            {cameraName}-----{roverName}
-          </Typography>
+            Earth date:{earth_date} 
          
+            Solar number:{sol}
+          </Typography>
+          <Typography gutterBottom variant="h7" component="h5">
+            Camera:{cameraName} 
+      
+            Rover:{roverName}
+          </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
-          Share
+        {favorite?( <Button onClick={handleDelete} size="small" variant="outlined" color="primary">
+          remove from favorites
+        </Button>):(
+          <Button onClick={handleClick} size="small" variant="outlined" color="primary">
+          Add to favorite
         </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
+
+        )}
+  
       </CardActions>
     </Card>
   );

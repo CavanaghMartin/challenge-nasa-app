@@ -1,6 +1,7 @@
 # challenge-nasa-app
 
-
+npm start to start the app
+npm test to see the tests
 
 SC React Test:
 

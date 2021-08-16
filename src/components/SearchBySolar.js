@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { TextField, Button } from '@material-ui/core';
+import { TextField } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import { GET_PHOTOS, setPage, setSolar } from '../redux/product/photo.action';
+import {  setSolar } from '../redux/product/photo.action';
 const SearchBySolar = () => {
     const dispatch = useDispatch()
 
@@ -10,8 +10,6 @@ const SearchBySolar = () => {
 
     const handleChange = (e) => {
         setInput(e.target.value);
-        //dispatch(setSolar)
-        console.log(e.target.value)
         dispatch(setSolar(e.target.value))
     };
 
@@ -21,7 +19,7 @@ const SearchBySolar = () => {
             <TextField
                 defaultValue={input}
                 id="standard-number"
-                label="sol Number"
+                label="Solar number"
                 type="number"
                 InputLabelProps={{
                     shrink: true,

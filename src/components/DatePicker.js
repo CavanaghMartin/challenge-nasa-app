@@ -8,19 +8,21 @@ import { setPhotosDate } from '../redux/product/photo.action';
 
 export default function BasicDatePicker() {
   const dispatch = useDispatch()
-  const [value, setValue] = React.useState(new Date());
+  var yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  
+  const [value, setValue] = React.useState(yesterday);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
-        label="Basic example"
+        label="Earth date"
         value={value}
         onChange={(date) => {
           setValue(date);
-          console.log(date)
           dispatch(setPhotosDate(date))
         }}
-        renderInput={(params) => <TextField {...params} />}
+        renderInput={(params) => <TextField style={{maxWidth:"200px"}} {...params} />}
       />
     </LocalizationProvider>
   );

@@ -36,7 +36,7 @@ export default function SelectCamera() {
         <FormHelperText>Filter by camera</FormHelperText>
         <Select
           defaultValue={camera}
-          value={""}
+          value={camera}
           onChange={handleChange}
           className={classes.selectEmpty}
           inputProps={{ 'aria-label': 'Without label' }}

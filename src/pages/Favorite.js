@@ -30,7 +30,7 @@ const Favorite = () => {
                             />
                         })
                     ) : (<Typography style={{left:"200px"}} variant="h3" gutterBottom>
-                        theres no matching results
+                        theres no favorites
                     </Typography>
                     )
                 }

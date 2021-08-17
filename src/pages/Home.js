@@ -28,24 +28,20 @@ const Home = () => {
             <Paginate style={{ margin: "auto" }} />
             <Box className={classes.mainRow}>
                 <Box className={classes.colMenuBox}>
-
                     <SelectRover />
-                    <br/>
+                    <br />
                     <Typography variant="h6" gutterBottom>
-
                         Query by Martian sol:
                     </Typography >
-
                     <SearchBySolar />
-                    <br/>
+                    <br />
                     <Typography variant="h6" gutterBottom>
-
                         Query by Earth date:
                     </Typography >
                     <BasicDatePicker />
                     <SelectCamera />
                 </Box>
-                <Box            className={classes.grid}>
+                <Box className={classes.grid}>
 
                     {
                         page && page.length > 0 ? (
@@ -84,15 +80,15 @@ const useStyles = makeStyles({
     mainRow: {
         display: "flex",
         width: "100%",
-    
+
     },
     colMenuBox: {
         margin: "1em",
         minWidth: 200,
         display: "flex",
         flexDirection: "column",
-        justifyContent:"space-between", 
-        height:460
+        justifyContent: "space-between",
+        height: 460
     }
 
 

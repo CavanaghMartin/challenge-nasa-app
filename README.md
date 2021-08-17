@@ -1,7 +1,7 @@
 # challenge-nasa-app
 
-npm start to start the app
-npm test to see the tests
+npm start to start the app<br/>
+npm test to see the tests<br/>
 
 SC React Test:
 
@@ -27,14 +27,3 @@ Using Create React App or your custom solution (React is a must), build an app t
 
 When you finish the test, push it as a public repository in github, gitlab, bitbucket or similar and send us the repository URL.(Editado)
 
-    👏
-    👍
-    👎
-    😊
-    😞
-
-NASA Open APIs
-api.nasa.gov
-
-
-https://api.nasa.gov/

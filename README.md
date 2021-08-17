@@ -1,7 +1,9 @@
 # challenge-nasa-app
 
-npm start to start the app<br/>
-npm test to see the tests<br/>
+<b>npm start</b> to start the app<br/>
+<b>npm test</b> to see the tests<br/>
+
+deploy: https://challenge-nasa-app.vercel.app/
 
 SC React Test:
 
@@ -9,11 +11,11 @@ Using Create React App or your custom solution (React is a must), build an app t
 	- Connects to the NASA API (https://api.nasa.gov/)<br/>
 	- Obtains photos from the 'Mars Rover' endpoint<br/>
 	- Allows the user to see the photos of each rover (Curiosity, Opportunity and	Spirit)<br/>
-	- The photos list should be paginated showing a max of 25 photos per page (dynamic loading similar to facebook/instagram will be nice, but not required)<br/>//paginate
-	- Allows the user to filter the rover photos by camera<br/>//filter
-	- By default it shows the latest photos for current day<br/>query
-	- Allows the user to search for photos based on 'Earth Day' date (2020-09-22)<br/>query
-	- Allows the user to search for photos based on the 'Sol' date (2890)<br/>//query
+	- The photos list should be paginated showing a max of 25 photos per page (dynamic loading similar to facebook/instagram will be nice, but not required)<br/>
+	- Allows the user to filter the rover photos by camera<br/>
+	- By default it shows the latest photos for current day<br/>
+	- Allows the user to search for photos based on 'Earth Day' date (2020-09-22)<br/>
+	- Allows the user to search for photos based on the 'Sol' date (2890)<br/>
 
 	Optional:
 	- Let the user store search parameters as favorites or bookmarks that can be recalled in the future (Local storage is accepted, any serverless way of storing data is also accepted)

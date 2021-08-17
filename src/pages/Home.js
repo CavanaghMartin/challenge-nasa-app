@@ -30,11 +30,14 @@ const Home = () => {
                 <Box className={classes.colMenuBox}>
 
                     <SelectRover />
+                    <br/>
                     <Typography variant="h6" gutterBottom>
 
                         Query by Martian sol:
                     </Typography >
+
                     <SearchBySolar />
+                    <br/>
                     <Typography variant="h6" gutterBottom>
 
                         Query by Earth date:
@@ -80,13 +83,16 @@ const useStyles = makeStyles({
     },
     mainRow: {
         display: "flex",
-        width: "100%"
+        width: "100%",
+    
     },
     colMenuBox: {
         margin: "1em",
         minWidth: 200,
         display: "flex",
         flexDirection: "column",
+        justifyContent:"space-between", 
+        height:460
     }
 
 

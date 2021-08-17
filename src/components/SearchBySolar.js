@@ -17,7 +17,7 @@ const SearchBySolar = () => {
     return (
         <div>
             <TextField
-                defaultValue={input}
+                defaultValue={""}
                 id="standard-number"
                 label="Solar number"
                 type="number"

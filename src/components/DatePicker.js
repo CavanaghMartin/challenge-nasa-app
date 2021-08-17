@@ -8,10 +8,9 @@ import { setPhotosDate } from '../redux/product/photo.action';
 
 export default function BasicDatePicker() {
   const dispatch = useDispatch()
-  var yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
   
-  const [value, setValue] = React.useState(yesterday);
+  
+  const [value, setValue] = React.useState(null);
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>

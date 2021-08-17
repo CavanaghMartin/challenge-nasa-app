@@ -12,10 +12,6 @@ afterEach(() => {
 })
 
 
-beforeAll(() => {  // This is Mocha; in Jest, use beforeAll
-  });
-
-
 test('Allows the user to select the photos of each rover (Curiosity, Opportunity and Spirit)', () => {
     render(<Provider store={store}><SelectRover /></Provider>);
 

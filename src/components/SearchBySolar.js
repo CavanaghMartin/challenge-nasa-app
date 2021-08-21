@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { TextField } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import {  setSolar } from '../redux/product/photo.action';
+import { setSolar } from '../redux/product/photo.action';
 const SearchBySolar = () => {
     const dispatch = useDispatch()
 

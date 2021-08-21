@@ -20,16 +20,9 @@ afterEach(() => {
 
 test('renders the card of the photo', () => {
     const photo = { id: 1, img: "https://m.media-amazon.com/images/I/61FlX89mYGL._AC_.jpg", earth_date: "12/10/1999", sol: 123, cameraName: "SWY", roverName: "Opportunity" }
-    render(<Provider store={store}><Card key={photo.id}
-        img={photo.img}
-        earth_date={photo.earth_date}
-        sol={photo.sol}
-        cameraName={photo.cameraName}
-        roverName={photo.roverName} /></Provider>);
-
+    render(<Provider store={store}><Card key={photo.id} {...photo} /></Provider>);
     const photoElement = screen.getByTestId("card");
     expect(photoElement).toBeInTheDocument();
-    expect(photoElement).toHaveTextContent("SWY")
 
 });
 
@@ -37,14 +30,8 @@ test('renders the card of the photo', () => {
 test('have text content of the component', () => {
 
     const photo = { id: 1, img: "https://m.media-amazon.com/images/I/61FlX89mYGL._AC_.jpg", earth_date: "12/10/1999", sol: 123, cameraName: "SWY", roverName: "Opportunity" }
-    render(<Provider store={store}><Card key={photo.id}
-        img={photo.img}
-        earth_date={photo.earth_date}
-        sol={photo.sol}
-        cameraName={photo.cameraName}
-        roverName={photo.roverName} /></Provider>);
+    render(<Provider store={store}><Card key={photo.id} {...photo} /></Provider>);
     const photoElement = screen.getByTestId("card");
-    expect(photoElement).toBeInTheDocument();
     expect(photoElement).toHaveTextContent("SWY")
 
 });

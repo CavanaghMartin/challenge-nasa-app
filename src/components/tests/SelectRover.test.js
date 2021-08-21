@@ -1,4 +1,4 @@
-import { render, screen, cleanup,fireEvent } from '@testing-library/react';
+import { render, screen, cleanup, fireEvent } from '@testing-library/react';
 import SelectRover from "../SelectRover"
 import { Provider } from 'react-redux'
 import configureStore from 'redux-mock-store'
@@ -19,5 +19,5 @@ test('Allows the user to select the photos of each rover (Curiosity, Opportunity
     expect(selectElement).toBeInTheDocument();
     expect(selectElement).toHaveTextContent("Curiosity​")
 
-  
+
 });
